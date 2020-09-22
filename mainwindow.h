@@ -11,6 +11,7 @@
 #include "QTimer"
 #include "QProcess"
 #include "QMessageBox"
+#include "QSystemTrayIcon"
 namespace Ui {
 class MainWindow;
 }
@@ -33,12 +34,16 @@ public:
 
     bool status_before=false;
     bool status_now;
-
     bool status_start=true;
 public:
     void init();
     void write(QString arg);
+    void changeEvent(QEvent *event);
 private slots:
+    //任务栏
+    void iconActived(QSystemTrayIcon::ActivationReason reason);
+
+    //
     void listen();
     void on_btn_open_clicked();
 
