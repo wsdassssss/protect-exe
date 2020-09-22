@@ -50,8 +50,8 @@ void MainWindow::init()
     });
     connect(action_quit,&QAction::triggered,this,[=](){
         this->close();
-        delete  this;
-        delete m_trayicon;
+       // delete  this;
+        //delete m_trayicon;
     });
     connect(action_auto,&QAction::triggered,this,[=](){
             if(action_auto->isChecked())
